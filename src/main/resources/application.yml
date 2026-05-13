@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: hospital-management
+
+  profiles:
+    active: dev
+
+server:
+  servlet:
+    context-path: /
+
+logging:
+
+  level:
+    root: INFO
+
+    org.springframework.security: WARN
+
+    org.hibernate.SQL: WARN
+
+  pattern:
+    console: >
+      %d{yyyy-MM-dd HH:mm:ss}
+      [%X{traceId}]
+      %-5level
+      %logger{36}
+      - %msg%n

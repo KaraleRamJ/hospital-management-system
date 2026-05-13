@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hospital_db
+    username: postgres
+    password: postgre
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    open-in-view: false
+
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+
+jwt:
+  secret: your-very-long-super-secure-secret-key-for-production
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
+
+management:
+
+  endpoints:
+
+    web:
+
+      exposure:
+
+        include: health,info,metrics
+
+  endpoint:
+
+    health:
+
+      show-details: always

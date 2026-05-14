@@ -27,7 +27,7 @@ logging:
     root: INFO
 
 jwt:
-  secret: your-very-long-super-secure-secret-key-for-production
+  secret: DFC3ZeXZOlILKJZd5VmHq8rPUYAXEkViSHkq0egrunzx15kZ2sHUXRxoKF+j1ftJInDY8tVbVtF2TlA0T/rMAg==
   access-token-expiration: 900000
   refresh-token-expiration: 604800000
 

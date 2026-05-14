@@ -2,6 +2,7 @@ package com.hospital.auth.repository;
 
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.hospital.auth.entity.User;
@@ -11,6 +12,7 @@ public interface UserRepository
 
     Optional<User> findByEmail(String email);
 
+    @EntityGraph(attributePaths = {"roles"})
     Optional<User> findByUsername(String username);
 
     boolean existsByEmail(String email);

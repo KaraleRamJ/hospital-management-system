@@ -60,8 +60,19 @@ public class JwtAuthenticationFilter
         String jwt =
                 authHeader.substring(7);
 
-        String username =
-                jwtUtil.extractUsername(jwt);
+        String username = null;
+        
+        try {
+        	
+        	username = jwtUtil.extractUsername(jwt);
+        	
+        } catch(Exception ex) {
+        	
+        	filterChain.doFilter(request, response);
+        	
+        	return;
+        }
+                
 
         if (username != null
                 && SecurityContextHolder
